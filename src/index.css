@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #FF8C00;
+  --color-primary-hover: #FFA94D;
+  --color-base-white: #FFFFFF;
+  --color-base-soft: #F8FAFC;
+  --color-neutral-text: #334155;
+  --color-neutral-secondary: #64748B;
+  --color-success: #10B981;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Dark Mode Overrides */
+.dark-mode {
+  --color-base-white: #121212;
+  --color-base-soft: #000000;
+  --color-neutral-text: #F8FAFC;
+  --color-neutral-secondary: #CBD5E1;
+}
+
+.dark-mode .bg-white {
+  background-color: #121212 !important;
+  border-color: #2D2D2D !important;
+}
+
+.dark-mode .bg-base-soft {
+  background-color: #000000 !important;
+}
+
+.dark-mode .divide-gray-50, .dark-mode .divide-gray-100 {
+  border-color: #2D2D2D !important;
+}
+
+.dark-mode .bg-gray-50, .dark-mode .bg-gray-100 {
+  background-color: #1E1E1E !important;
+}
+
+.dark-mode .text-neutral-secondary {
+  color: #CBD5E1 !important;
+}
+
+.dark-mode .border-gray-50, .dark-mode .border-gray-100, .dark-mode .border-gray-200 {
+  border-color: #2D2D2D !important;
+}
+
+.dark-mode .card-shadow {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E2E8F0;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #CBD5E1;
+}
+
+.dark-mode ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+.dark-mode ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+@layer base {
+  body {
+    @apply bg-base-soft text-neutral-text font-sans antialiased overflow-x-hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight leading-tight;
+  }
+
+  * {
+    @apply min-w-0;
+  }
+}
+
+.truncate-container {
+  @apply overflow-hidden text-ellipsis whitespace-nowrap;
+}
+
+.data-grid-row {
+  @apply grid items-center border-b border-gray-200 transition-colors hover:bg-white;
+}
+
+.card-shadow {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
